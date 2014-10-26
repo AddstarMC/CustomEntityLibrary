@@ -1,6 +1,6 @@
 package com.github.customentitylibrary.pathfinders;
 
-import net.minecraft.server.v1_7_R1.*;
+import net.minecraft.server.v1_7_R4.*;
 
 public class PathfinderMoveToTarget extends PathfinderBase
 {

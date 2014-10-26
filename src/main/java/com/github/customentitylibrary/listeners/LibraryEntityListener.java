@@ -5,10 +5,10 @@ import com.github.customentitylibrary.CustomEntitySpawnEvent;
 import com.github.customentitylibrary.entities.CustomEntityWrapper;
 
 import com.github.customentitylibrary.utils.NMS;
-import net.minecraft.server.v1_7_R1.*;
+import net.minecraft.server.v1_7_R4.*;
 
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_7_R1.util.UnsafeList;
+import org.bukkit.craftbukkit.v1_7_R4.util.UnsafeList;
 import org.bukkit.entity.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.EventHandler;

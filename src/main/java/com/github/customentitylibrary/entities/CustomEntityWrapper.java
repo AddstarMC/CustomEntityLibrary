@@ -10,15 +10,15 @@ import java.util.Map.Entry;
 import com.github.customentitylibrary.CustomEntitySpawnEvent;
 import com.github.customentitylibrary.utils.DefaultPathfinders;
 import com.github.customentitylibrary.utils.NMS;
-import net.minecraft.server.v1_7_R1.*;
+import net.minecraft.server.v1_7_R4.*;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.craftbukkit.v1_7_R1.CraftWorld;
-import org.bukkit.craftbukkit.v1_7_R1.entity.CraftEntity;
-import org.bukkit.craftbukkit.v1_7_R1.inventory.CraftItemStack;
-import org.bukkit.craftbukkit.v1_7_R1.util.UnsafeList;
+import org.bukkit.craftbukkit.v1_7_R4.CraftWorld;
+import org.bukkit.craftbukkit.v1_7_R4.entity.CraftEntity;
+import org.bukkit.craftbukkit.v1_7_R4.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_7_R4.util.UnsafeList;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason;
@@ -311,7 +311,7 @@ public class CustomEntityWrapper
 	public static CustomEntityWrapper spawnCustomEntity(EntityType type, World world, double x, double y, double z)
 	{
 		org.bukkit.entity.EntityType bukkitType = org.bukkit.entity.EntityType.valueOf(type.getPreferredType().toUpperCase().replaceAll(" ", "_"));
-		net.minecraft.server.v1_7_R1.World nmsWorld = ((CraftWorld)world).getHandle();
+		net.minecraft.server.v1_7_R4.World nmsWorld = ((CraftWorld)world).getHandle();
 		EntityInsentient entity;
 		switch(bukkitType)
 		{

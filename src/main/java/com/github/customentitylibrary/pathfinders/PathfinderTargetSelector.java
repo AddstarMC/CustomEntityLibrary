@@ -2,7 +2,7 @@ package com.github.customentitylibrary.pathfinders;
 
 import java.util.List;
 
-import net.minecraft.server.v1_7_R1.*;
+import net.minecraft.server.v1_7_R4.*;
 
 public class PathfinderTargetSelector extends PathfinderBase
 {

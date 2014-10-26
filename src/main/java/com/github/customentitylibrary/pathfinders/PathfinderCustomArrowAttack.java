@@ -1,7 +1,7 @@
 package com.github.customentitylibrary.pathfinders;
 
-import net.minecraft.server.v1_7_R1.*;
-import org.bukkit.craftbukkit.v1_7_R1.event.CraftEventFactory;
+import net.minecraft.server.v1_7_R4.*;
+import org.bukkit.craftbukkit.v1_7_R4.event.CraftEventFactory;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.entity.EntityTargetEvent;
 

@@ -1,7 +1,7 @@
 package com.github.customentitylibrary.entities;
 
-import net.minecraft.server.v1_7_R1.EntityPigZombie;
-import net.minecraft.server.v1_7_R1.World;
+import net.minecraft.server.v1_7_R4.EntityPigZombie;
+import net.minecraft.server.v1_7_R4.World;
 
 public class CustomPigZombie extends EntityPigZombie
 {
