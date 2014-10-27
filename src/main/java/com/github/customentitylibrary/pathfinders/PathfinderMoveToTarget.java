@@ -31,7 +31,7 @@ public class PathfinderMoveToTarget extends PathfinderBase
 				return false;
 			else
 			{
-				this.path = this.entity.getNavigation().a(vec3d.c, vec3d.d, vec3d.e);	//getNavigation().a creates a path to it's paramaters. vec3d.a/b/c are x/y/z
+				this.path = this.entity.getNavigation().a(vec3d.a, vec3d.b, vec3d.c);	//getNavigation().a creates a path to it's paramaters. vec3d.a/b/c are x/y/z
 				return this.path != null;
 			}
 		}

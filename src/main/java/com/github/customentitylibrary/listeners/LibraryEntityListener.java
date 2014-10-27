@@ -94,9 +94,9 @@ public class LibraryEntityListener implements Listener
 		else if(damager instanceof Projectile)
 		{
 			Projectile proj = (Projectile) damager;
-			if(proj.getShooter() != null && CustomEntityWrapper.instanceOf(proj.getShooter()) && event.getEntity() instanceof LivingEntity)
+			if(proj.getShooter() instanceof Entity && CustomEntityWrapper.instanceOf((Entity) proj.getShooter()) && event.getEntity() instanceof LivingEntity)
 			{
-				CustomEntityWrapper customEnt = CustomEntityWrapper.getCustomEntity(proj.getShooter());
+				CustomEntityWrapper customEnt = CustomEntityWrapper.getCustomEntity((Entity) proj.getShooter());
 				LivingEntity ent = (LivingEntity) event.getEntity();
 				double health = ent.getHealth() - customEnt.getType().getArmorPiercingDamage();
 				if(health < 0)
@@ -117,7 +117,8 @@ public class LibraryEntityListener implements Listener
 		if (damager instanceof Projectile)
 		{
 			Projectile pj = (Projectile) event.getDamager();
-			damager = pj.getShooter();
+			if (pj.getShooter() instanceof Entity)
+				damager = (Entity) pj.getShooter();
 		}
 		if(CustomEntityWrapper.instanceOf(ent))
 		{
@@ -180,7 +181,7 @@ public class LibraryEntityListener implements Listener
 
 				for(int i = 0; i < targetSelectors.size(); i++)
 				{
-					Field goalField = targetSelectors.get(i).getClass().getDeclaredField("a");
+					Field goalField = targetSelectors.get(i).getClass().getDeclaredField(NMS.PATHFINDER_GOAL);
 					goalField.setAccessible(true);
 					PathfinderGoal a = (PathfinderGoal)goalField.get(targetSelectors.get(i));
 					if(a instanceof PathfinderGoalHurtByTarget)

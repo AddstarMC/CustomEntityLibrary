@@ -141,7 +141,7 @@ public class PathfinderCustomArrowAttack extends PathfinderBase
 					entityarrow.b(entityarrow.e() + (double) eDamage * 0.5D + 0.5D);
 
 				if (eKnockback > 0)
-					entityarrow.a(eKnockback);
+					entityarrow.setKnockbackStrength(eKnockback);
 
 				if (EnchantmentManager.getEnchantmentLevel(Enchantment.ARROW_FIRE.id, entity.getEquipment()[0]) > 0)
 					entityarrow.setOnFire(100);
@@ -172,9 +172,9 @@ public class PathfinderCustomArrowAttack extends PathfinderBase
 				double d8 = 4.0D;
 				Vec3D vec3d = entity.j(1.0F);
 
-				entitylargefireball.locX = (entity.locX + vec3d.c * d8);
+				entitylargefireball.locX = (entity.locX + vec3d.a * d8);
 				entitylargefireball.locY = (entity.locY + entity.length / 2.0F + 0.5D);
-				entitylargefireball.locZ = (entity.locZ + vec3d.e * d8);
+				entitylargefireball.locZ = (entity.locZ + vec3d.c * d8);
 				entity.world.addEntity(entitylargefireball);
 				break;
 			case SMALL_FIREBALL:
@@ -204,7 +204,7 @@ public class PathfinderCustomArrowAttack extends PathfinderBase
 				EntityWitherSkull entitywitherskull = new EntityWitherSkull(entity.world, entity, d6, d7, d8);
 
 				if (rnd.nextFloat() < 0.001F) {
-					entitywitherskull.a(true);
+					entitywitherskull.setCharged(true);
 				}
 
 				entitywitherskull.locY = d4;

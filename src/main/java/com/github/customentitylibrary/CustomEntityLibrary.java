@@ -10,6 +10,7 @@ import com.github.customentitylibrary.entities.CustomEntityWrapper;
 import com.github.customentitylibrary.entities.CustomGiant;
 import com.github.customentitylibrary.entities.CustomPigZombie;
 import com.github.customentitylibrary.listeners.LibraryEntityListener;
+import com.github.customentitylibrary.utils.NMS;
 
 import net.minecraft.server.v1_7_R4.*;
 
@@ -82,11 +83,11 @@ public class CustomEntityLibrary
 		{
 			Class entityTypesClass = EntityTypes.class;
 			Field[] mapFields = new Field[5];
-			mapFields[0] = entityTypesClass.getDeclaredField("c");
-			mapFields[1] = entityTypesClass.getDeclaredField("d");
-			mapFields[2] = entityTypesClass.getDeclaredField("e");
-			mapFields[3] = entityTypesClass.getDeclaredField("f");
-			mapFields[4] = entityTypesClass.getDeclaredField("g");
+			mapFields[0] = entityTypesClass.getDeclaredField(NMS.ENTITY_TYPE_MAPS[0]);
+			mapFields[1] = entityTypesClass.getDeclaredField(NMS.ENTITY_TYPE_MAPS[1]);
+			mapFields[2] = entityTypesClass.getDeclaredField(NMS.ENTITY_TYPE_MAPS[2]);
+			mapFields[3] = entityTypesClass.getDeclaredField(NMS.ENTITY_TYPE_MAPS[3]);
+			mapFields[4] = entityTypesClass.getDeclaredField(NMS.ENTITY_TYPE_MAPS[4]);
 			HashMap[] maps = new HashMap[5];
 			for(int i = 0; i < 5; i++)
 			{
@@ -108,7 +109,7 @@ public class CustomEntityLibrary
 		try
 		{
 			Class entityTypesClass = EntityTypes.class;
-			Field mapField = entityTypesClass.getDeclaredField("a");
+			Field mapField = entityTypesClass.getDeclaredField(NMS.ENTITY_TYPE_EGGS);
 			mapField.setAccessible(true);
 			return (HashMap) mapField.get(EntityTypes.class);
 		}
